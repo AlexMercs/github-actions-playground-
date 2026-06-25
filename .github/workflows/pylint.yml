@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "Running tests..."          
           export PYTHONPATH=.
-          pytest --maxfail=1 --disable-warnings -v
+          pytest --maxfail=1 --disable-warnings -v --junitxml=pytest-report.xml
 
       - name: 📊 Show logs / coverage (optional)
         run: |
@@ -43,6 +43,6 @@ jobs:
         uses: dorny/test-reporter@v3
         if: ${{ !cancelled() }}       # run this step even if previous step failed
         with:
-          name: JEST Tests            # Name of the check run which will be created
-          path: reports/jest-*.xml    # Path to test results
-          reporter: jest-junit        # Format of test results
+          name: Pytest Results
+          path: pytest-report.xml
+          reporter: java-junit
