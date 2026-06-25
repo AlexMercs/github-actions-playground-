@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify
 import logging
 
+
 main = Blueprint("main", __name__)
 
 # Configure logging
