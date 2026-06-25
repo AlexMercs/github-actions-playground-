@@ -31,7 +31,8 @@ jobs:
 
       - name: 🧪 Run tests (pytest)
         run: |
-          echo "Running tests..."
+          echo "Running tests..."          
+          export PYTHONPATH=.
           pytest --maxfail=1 --disable-warnings -v
 
       - name: 📊 Show logs / coverage (optional)
