@@ -15,4 +15,4 @@ def create_app():
 
 
 # For simple usage (like tests)
-app = create_app() 
+app = create_app()
