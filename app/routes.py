@@ -18,4 +18,3 @@ def home():
 def health():
     logging.info("Health check route accessed")
     return jsonify({"status": "ok"}), 200
-
