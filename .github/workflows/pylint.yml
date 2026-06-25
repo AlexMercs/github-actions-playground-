@@ -38,3 +38,11 @@ jobs:
       - name: 📊 Show logs / coverage (optional)
         run: |
           echo "Showing test logs complete"
+          
+      - name: Test Report
+        uses: dorny/test-reporter@v3
+        if: ${{ !cancelled() }}       # run this step even if previous step failed
+        with:
+          name: JEST Tests            # Name of the check run which will be created
+          path: reports/jest-*.xml    # Path to test results
+          reporter: jest-junit        # Format of test results
