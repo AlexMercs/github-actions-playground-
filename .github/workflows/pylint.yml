@@ -46,3 +46,4 @@ jobs:
           name: Pytest Results
           path: pytest-report.xml
           reporter: java-junit
+          use-actions-summary: 'true'
